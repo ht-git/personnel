@@ -11,7 +11,7 @@ public class CommonController {
 		// 作为一个空方法，可以匹配任何无效输入，再跳转到404
 		return formName;
 //		String blank = "blank";
-//		return blank;123
+//		return blank;12343534
 	}
 	
 	@RequestMapping(value="/")
