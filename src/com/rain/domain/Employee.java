@@ -1,46 +1,27 @@
 package com.rain.domain;
 
 public class Employee implements java.io.Serializable{
-	private Integer id;
-	private Integer job_id;
-	private Integer dept_id;
-	public Integer getJob_id() {
-		return job_id;
-	}
+	private Integer id;		//员工号
+	private String card_id;//身份证号
+	private String name;	//姓名
+	private Integer sex;	//性别
+	private String birthday;//生日
+	private String birthplace;//籍贯
+	private String address;//住址
+	private String email;  //邮箱
+	private String education;//学历
+	private String speciality;//专业
+	private String graduation_date;//毕业时间
+	private String school;  //毕业院校
+	private String create_date; //就职时间
+	private String phone;   //联系方式
+	private String remark;  //备注
 
-	public void setJob_id(Integer job_id) {
-		this.job_id = job_id;
-	}
+	private Integer status; //状态
+	private Dept dept;      //部门
+	private Job job;		 //职位
 
-	public Integer getDept_id() {
-		return dept_id;
-	}
 
-	public void setDept_id(Integer dept_id) {
-		this.dept_id = dept_id;
-	}
-
-	private Dept dept;
-	private Job job;
-	private String name;
-	private String card_id;
-	private String address;
-	private String post_code;
-	private String tel;
-	private String phone;
-	private String qq_num;
-	private String email;
-	private Integer sex;
-	private String party;
-	
-	private String birthday;
-	private String race;
-	private String education;
-	private String speciality;
-	private String hobby;
-	private String remark;
-	private String create_date;
-	
 	public Employee(){
 		super();
 	}
@@ -53,20 +34,12 @@ public class Employee implements java.io.Serializable{
 		this.id = id;
 	}
 
-	public Dept getDept() {
-		return dept;
+	public String getCard_id() {
+		return card_id;
 	}
 
-	public void setDept(Dept dept) {
-		this.dept = dept;
-	}
-
-	public Job getJob() {
-		return job;
-	}
-
-	public void setJob(Job job) {
-		this.job = job;
+	public void setCard_id(String card_id) {
+		this.card_id = card_id;
 	}
 
 	public String getName() {
@@ -77,76 +50,12 @@ public class Employee implements java.io.Serializable{
 		this.name = name;
 	}
 
-	public String getCard_id() {
-		return card_id;
-	}
-
-	public void setCard_id(String card_id) {
-		this.card_id = card_id;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getPost_code() {
-		return post_code;
-	}
-
-	public void setPost_code(String post_code) {
-		this.post_code = post_code;
-	}
-
-	public String getTel() {
-		return tel;
-	}
-
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getQq_num() {
-		return qq_num;
-	}
-
-	public void setQq_num(String qq_num) {
-		this.qq_num = qq_num;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public Integer getSex() {
 		return sex;
 	}
 
 	public void setSex(Integer sex) {
 		this.sex = sex;
-	}
-
-	public String getParty() {
-		return party;
-	}
-
-	public void setParty(String party) {
-		this.party = party;
 	}
 
 	public String getBirthday() {
@@ -157,12 +66,28 @@ public class Employee implements java.io.Serializable{
 		this.birthday = birthday;
 	}
 
-	public String getRace() {
-		return race;
+	public String getBirthplace() {
+		return birthplace;
 	}
 
-	public void setRace(String race) {
-		this.race = race;
+	public void setBirthplace(String birthplace) {
+		this.birthplace = birthplace;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getEducation() {
@@ -181,12 +106,36 @@ public class Employee implements java.io.Serializable{
 		this.speciality = speciality;
 	}
 
-	public String getHobby() {
-		return hobby;
+	public String getGraduation_date() {
+		return graduation_date;
 	}
 
-	public void setHobby(String hobby) {
-		this.hobby = hobby;
+	public void setGraduation_date(String graduation_date) {
+		this.graduation_date = graduation_date;
+	}
+
+	public String getSchool() {
+		return school;
+	}
+
+	public void setSchool(String school) {
+		this.school = school;
+	}
+
+	public String getCreate_date() {
+		return create_date;
+	}
+
+	public void setCreate_date(String create_date) {
+		this.create_date = create_date;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getRemark() {
@@ -197,13 +146,27 @@ public class Employee implements java.io.Serializable{
 		this.remark = remark;
 	}
 
-	public String getCreate_date() {
-		return create_date;
+	public Integer getStatus() {
+		return status;
 	}
 
-	public void setCreate_date(String create_date) {
-		this.create_date = create_date;
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
-	
-	
+
+	public Dept getDept() {
+		return dept;
+	}
+
+	public void setDept(Dept dept) {
+		this.dept = dept;
+	}
+
+	public Job getJob() {
+		return job;
+	}
+
+	public void setJob(Job job) {
+		this.job = job;
+	}
 }
