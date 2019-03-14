@@ -19,7 +19,11 @@ public class Employee implements java.io.Serializable{
 
 	private Integer status; //状态
 	private Dept dept;      //部门
+	private Integer dept_id;      //部门id
 	private Job job;		 //职位
+	private Integer job_id;      //职位id
+
+
 
 
 	public Employee(){
@@ -162,11 +166,27 @@ public class Employee implements java.io.Serializable{
 		this.dept = dept;
 	}
 
+	public Integer getDept_id() {
+		return dept_id;
+	}
+
+	public void setDept_id(Integer dept_id) {
+		this.dept_id = dept_id;
+	}
+
 	public Job getJob() {
 		return job;
 	}
 
 	public void setJob(Job job) {
 		this.job = job;
+	}
+
+	public Integer getJob_id() {
+		return job_id;
+	}
+
+	public void setJob_id(Integer job_id) {
+		this.job_id = job_id;
 	}
 }

@@ -120,18 +120,19 @@ public class RainServiceImpl implements RainService{
 		/**
 		 * 将部门，职位id中的信息提取出来
 		 */
-		List<Employee> list = employeedao.get_List();
+		return employeedao.get_List();
+		/*List<Employee> list = employeedao.get_List();
 		int size = list.size();
 		List<Employee> list2 = new ArrayList<>();
 		for(int i = 0;i<size;i++){
 			Employee data = list.get(i);
-			Dept dept = deptDao.get_Info(data.getDept_id());
+			Dept dept = deptDao.get_Info(data.getDept().getId());
 			data.setDept(dept);
 			Job job = jobDao.get_Info(data.getJob_id());
 			data.setJob(job);
 			list2.add(i,data);
 		}
-		return list2;
+		return list2;*/
 	}
 	@Override
 	public List<Employee> get_EmployeeLikeList(String content) {
@@ -156,10 +157,10 @@ public class RainServiceImpl implements RainService{
 	public Employee get_EmployeeInfo(Integer id) {
 		// TODO Auto-generated method stub
 		Employee data = employeedao.get_Info(id);
-		Dept dept = deptDao.get_Info(data.getDept_id());
+		/*Dept dept = deptDao.get_Info(data.getDept_id());
 		data.setDept(dept);
 		Job job = jobDao.get_Info(data.getJob_id());
-		data.setJob(job);
+		data.setJob(job);*/
 		return data;
 	}
 	@Override

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -50,8 +51,18 @@
                   <span class="x-red">*</span>性别
               </label>
               <div class="layui-input-inline">
-                  <input type="text" id="sex" name="sex" required="" lay-verify="required"
-                  autocomplete="off" class="layui-input" value="${employee.sex }">
+                  <select id="sex" name="sex">
+                      <option value="0"
+                              <c:choose>
+                                  <c:when test="${employee.sex == 0}">selected</c:when>
+                              </c:choose>
+                      >女</option>
+                      <option value="1"
+                              <c:choose>
+                                  <c:when test="${employee.sex == 1}">selected</c:when>
+                              </c:choose>
+                      >男</option>
+                  </select>
               </div>
           </div>
            <div class="layui-form-item">
@@ -90,31 +101,6 @@
                   autocomplete="off" class="layui-input" value="${employee.address }">
               </div>
           </div>
-  			<div class="layui-form-item">
-              <label for="username" class="layui-form-label">
-                  <span class="x-red">*</span>职位
-              </label>
-              <div class="layui-input-inline">
-                  <select id="job_id" name="job_id" class="valid" >
-                    <c:forEach items="${requestScope.job_list}" var="line" varStatus="stat">
-                    <option value="${line.id}" <c:if test="${employee.job_id == line.id }">selected</c:if>>${line.name}</option>
-                    </c:forEach>
-                  </select>
-              </div>
-          </div>
-            <div class="layui-form-item">
-              <label for="username" class="layui-form-label">
-                  <span class="x-red">*</span>部门
-              </label>
-              <div class="layui-input-inline">
-                  <select id="dept_id" name="dept_id" class="valid">
-                    <c:forEach items="${requestScope.dept_list}" var="line" varStatus="stat">
-                    <option value="${line.id}" <c:if test="${employee.dept_id == line.id }">selected</c:if>>${line.name}</option>
-                    </c:forEach>
-                  </select>
-              </div>
-          </div>         
-          
 
           <div class="layui-form-item">
               <label for="L_repass" class="layui-form-label">

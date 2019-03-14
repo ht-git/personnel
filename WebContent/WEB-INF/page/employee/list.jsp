@@ -54,18 +54,18 @@
             <th>
               <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
             </th>
-            <th>姓名</th>
-            <th>性别</th>
-         <th>手机号码</th>
-         <th>邮箱</th>
-         <th>职位</th>
-         <th>学历</th>
-         <th>身份证号码</th>
-         <th>部门</th>
-         <th>联系地址</th>
-         <th>建档日期</th>
+             <th>姓名</th>
+             <th>性别</th>
+             <th>手机号码</th>
+             <th>邮箱</th>
+             <th>职位</th>
+             <th>学历</th>
+             <th>身份证号码</th>
+             <th>部门</th>
+             <th>联系地址</th>
+             <th>建档日期</th>
          <!-- <th>状态</th> -->
-            <th>操作</th>
+             <th>操作</th>
         </thead>
         <tbody>
         <c:forEach items="${requestScope.list}" var="dept" varStatus="stat">
@@ -74,7 +74,16 @@
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
             <td>${dept.name }</td>
-            <td>${dept.sex }</td>
+            <td>
+                <c:choose>
+                    <c:when test="${dept.sex == 0}">
+                        女
+                    </c:when>
+                    <c:when test="${dept.sex == 1}">
+                        男
+                    </c:when>
+                </c:choose>
+            </td>
             <td>${dept.phone }</td>
             <td>${dept.email }</td>
             <td>${dept.job.name }</td>
@@ -91,7 +100,7 @@
                 <i class="layui-icon">&#xe601;</i>
               </a> -->
               <%-- <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/job/add?id=${dept.id }');" href="javascript:;"> --%>
-              <a title="编辑"  href="${ctx}/employee/add?id=${dept.id }">
+              <a title="编辑"  href="${ctx}/employee/info?id=${dept.id }">
                 <i class="layui-icon">&#xe642;</i>
               </a>
               <a title="删除" onclick="member_del(this,'${dept.id }')" href="javascript:;">

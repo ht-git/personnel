@@ -118,11 +118,11 @@ public class EmployeeDynaSqlProvider {
 						if(employee.getStatus()!=null){
 							SET("status = #{status}");
 						}
-						if(employee.getDept()!=null){
-							SET("dept_id = #{dept.id}");
+						if(employee.getDept_id()!=null){
+							SET("dept_id = #{dept_id}");
 						}
-						if(employee.getStatus()!=null){
-							SET("job_id = #{job.id}");
+						if(employee.getJob_id()!=null){
+							SET("job_id = #{job_id}");
 						}
 						
 						WHERE(" id = #{id} ");
