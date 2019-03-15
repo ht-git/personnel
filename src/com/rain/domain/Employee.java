@@ -1,5 +1,7 @@
 package com.rain.domain;
 
+import java.math.BigDecimal;
+
 public class Employee implements java.io.Serializable{
 	private Integer id;		//员工号
 	private String card_id;//身份证号
@@ -23,7 +25,7 @@ public class Employee implements java.io.Serializable{
 	private Job job;		 //职位
 	private Integer job_id;      //职位id
 
-
+	private BigDecimal salary;  //工资（月薪）
 
 
 	public Employee(){
@@ -188,5 +190,13 @@ public class Employee implements java.io.Serializable{
 
 	public void setJob_id(Integer job_id) {
 		this.job_id = job_id;
+	}
+
+	public BigDecimal getSalary() {
+		return salary;
+	}
+
+	public void setSalary(BigDecimal salary) {
+		this.salary = salary;
 	}
 }

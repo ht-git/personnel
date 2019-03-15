@@ -58,11 +58,14 @@ public class EmployeeDynaSqlProvider {
 						if(employee.getStatus()!=null){
 							VALUES("status","#{status}");
 						}
-						if(employee.getDept()!=null){
-							VALUES("dept_id","#{dept.id}");
+						if(employee.getDept_id()!=null){
+							VALUES("dept_id","#{dept_id}");
 						}
-						if(employee.getJob()!=null){
-							VALUES("job_id","#{job.id}");
+						if(employee.getJob_id()!=null){
+							VALUES("job_id","#{job_id}");
+						}
+						if(employee.getSalary()!=null){						//添加salary字段
+							VALUES("salary","#{salary}");
 						}
 					}
 				}.toString();
@@ -118,13 +121,15 @@ public class EmployeeDynaSqlProvider {
 						if(employee.getStatus()!=null){
 							SET("status = #{status}");
 						}
-						if(employee.getDept_id()!=null){
-							SET("dept_id = #{dept_id}");
+						if(employee.getDept_id()!=null){			//更新时用实体类的
+							SET("dept_id = #{dept_id}");		//dept_id和job_id属性
 						}
 						if(employee.getJob_id()!=null){
 							SET("job_id = #{job_id}");
 						}
-						
+						if(employee.getSalary()!=null){			//添加salary属性
+							SET("salary = #{salary}");
+						}
 						WHERE(" id = #{id} ");
 					}
 				}.toString();

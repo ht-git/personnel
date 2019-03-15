@@ -52,6 +52,9 @@ public interface RainService {
 	void insert_EmployeeInfo(Employee data);
 	void delete_EmployeeInfo(Integer id);
 
+	//
+	List<Employee> findEmployeeByDeptId(Integer id);
+
 	List<Notice> get_NoticeList();
 
 	List<Notice> get_NoticeLikeList(String content);

@@ -11,10 +11,7 @@ import com.rain.domain.Employee;
 import org.apache.ibatis.mapping.FetchType;
 
 public interface EmployeeDao {
-	/**
-	 *
-	 */
-	//查询
+
 	@Select("select * from "+EMPLOYEETABLE+" ")
 	@Results({
 			@Result(id=true, column="id", property="id"),

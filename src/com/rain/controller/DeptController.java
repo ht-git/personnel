@@ -2,6 +2,7 @@ package com.rain.controller;
 
 import java.util.List;
 
+import com.rain.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -75,9 +76,18 @@ public class DeptController {
 	}
 	@RequestMapping(value="/dept/delete",method=RequestMethod.GET)
 	 public void delete(Integer id){
-		System.out.println(id);
+//		System.out.println(id);
 		if(id!=null){
 			rainservice.delete_Info(id);
 		}
+	}
+
+	@RequestMapping(value="/dept/detail")
+	public String detail(Integer id, Model model) {
+		List<Employee> employeeList = rainservice.findEmployeeByDeptId(id);
+		String deptName = rainservice.get_Info(id).getName();
+		model.addAttribute("list", employeeList);
+		model.addAttribute("deptName", deptName);
+		return "/dept/detail";
 	}
 }

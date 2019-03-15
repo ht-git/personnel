@@ -186,6 +186,15 @@ public class RainServiceImpl implements RainService{
 		// TODO Auto-generated method stub
 		employeedao.delete_Info(id);
 	}
+
+	@Override
+	public List<Employee> findEmployeeByDeptId(Integer id) {
+		/*
+		liubf
+		 */
+		return employeedao.findEmployeeByDeptId(id);
+	}
+
 	/**
 	 * 公告管理
 	 */
