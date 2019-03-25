@@ -92,5 +92,6 @@ public interface RainService {
 	void insert_UserInfo(User notice);
 
 	void delete_UserInfo(Integer id);
-	
+
+	void resign(Integer id);
 }

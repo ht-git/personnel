@@ -4,10 +4,7 @@ import static com.rain.util.common.Constants.USERTABLE;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.*;
 
 import com.rain.dao.provider.UserDynaSqlProvider;
 import com.rain.domain.User;
@@ -16,7 +13,7 @@ public interface UserDao {
 
 	@Select("select * from "+USERTABLE+" ")
 	List<User> get_List();
-	@Select("select * from "+USERTABLE+"  where title like CONCAT('%',#{content},'%')")
+	@Select("select * from "+USERTABLE+"  where username like CONCAT('%',#{content},'%')")
 	List<User> get_LikeList(String content);
 
 	@Select("select * from "+USERTABLE+"  where loginname = #{loginname} AND password = #{password}")

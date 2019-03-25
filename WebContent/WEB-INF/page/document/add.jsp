@@ -5,7 +5,7 @@
   
   <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
+    <title>欢迎页面-人事管理系统</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -27,7 +27,7 @@
         <form class="layui-form" method="POST" id="deptForm" enctype="multipart/form-data" action="${ctx}/document/add">
         <input type="hidden" name="id" id="id" value="${job.id }" >
           <div class="layui-form-item">
-              <label for="username" class="layui-form-label">
+              <label for="title" class="layui-form-label">
                   <span class="x-red">*</span>标题
               </label>
               <div class="layui-input-inline">
@@ -37,7 +37,7 @@
              
           </div>
         <div class="layui-form-item">
-              <label for="username" class="layui-form-label">
+              <label for="remark" class="layui-form-label">
                   <span class="x-red">*</span>描述
               </label>
               <div class="layui-input-inline">
@@ -47,7 +47,7 @@
              
           </div>
          <div class="layui-form-item">
-              <label for="username" class="layui-form-label">
+              <label for="file" class="layui-form-label">
                   <span class="x-red">*</span>上传文件
               </label>
               <div class="layui-input-inline">

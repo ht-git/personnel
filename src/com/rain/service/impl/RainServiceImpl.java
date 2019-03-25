@@ -312,4 +312,11 @@ public class RainServiceImpl implements RainService{
 		// TODO Auto-generated method stub
 		userdao.delete_Info(id);
 	}
+
+	@Override
+	public void resign(Integer id) {
+		employeedao.resign(id);
+	}
+
+
 }

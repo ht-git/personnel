@@ -6,7 +6,7 @@
   
   <head>
     <meta charset="UTF-8">
-    <title>添加员工</title>
+    <title>员工详情</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -123,7 +123,7 @@
         <a href="${ctx}/employee/editDept?id=${employee.id }">
             <input type="button" value="职位部门调动" class="layui-btn"/>
         </a>
-        <a href="">
+        <a href="${ctx}/employee/resign?id=${employee.id }">
             <input type="button" value="离职" class="layui-btn"/>
         </a>
         </div>

@@ -79,32 +79,42 @@ public class EmployeeController {
 		return "/employee/editDept";
 	}
 
-		@RequestMapping(value="/employee/add",method=RequestMethod.GET)
-		 public String add(Model model,Integer id){
-			if(id!=null){
-				Employee employee = rainservice.get_EmployeeInfo(id);
-				model.addAttribute("job",employee);
-			}
-			List<Dept> dept_list = rainservice.findAllDept();
-			List<Job> job_list = rainservice.findAllJob();
-			model.addAttribute("job_list", job_list);
-			model.addAttribute("dept_list",dept_list);
-			return "/employee/add";
+	@RequestMapping(value="/employee/add",method=RequestMethod.GET)
+	 public String add(Model model,Integer id){
+		if(id!=null){
+			Employee employee = rainservice.get_EmployeeInfo(id);
+			model.addAttribute("job",employee);
 		}
-		@RequestMapping(value="/employee/add",method=RequestMethod.POST)
-		 public ModelAndView add(ModelAndView mv,@ModelAttribute Employee employee ,Integer id){
-			if(id!=null){
-				rainservice.update_EmployeeInfo(employee);
-			}else{
-				rainservice.insert_EmployeeInfo(employee);
-			}
-			mv.setViewName("redirect:/employee/list");
-			return mv;
+		List<Dept> dept_list = rainservice.findAllDept();
+		List<Job> job_list = rainservice.findAllJob();
+		model.addAttribute("job_list", job_list);
+		model.addAttribute("dept_list",dept_list);
+		return "/employee/add";
+	}
+	@RequestMapping(value="/employee/add",method=RequestMethod.POST)
+	 public ModelAndView add(ModelAndView mv,@ModelAttribute Employee employee ,Integer id){
+		if(id!=null){
+			rainservice.update_EmployeeInfo(employee);
+		}else{
+			rainservice.insert_EmployeeInfo(employee);
 		}
-		@RequestMapping(value="/employee/delete",method=RequestMethod.GET)
-		 public void delete(Integer id){
-			if(id!=null){
-				rainservice.delete_JobInfo(id);
-			}
+		mv.setViewName("redirect:/employee/list");
+		return mv;
+	}
+	@RequestMapping(value="/employee/delete",method=RequestMethod.GET)
+	 public void delete(Integer id){
+		if(id!=null){
+			rainservice.delete_JobInfo(id);
 		}
+	}
+
+	@RequestMapping(value = "/employee/resign", method = RequestMethod.GET)
+	public String resign(Integer id, Model model) {
+		if (id != null) {
+			rainservice.resign(id);
+		}
+		List<Employee> job_list = rainservice.get_EmployeeList();
+		model.addAttribute("list",job_list);
+		return "employee/list";
+	}
 }

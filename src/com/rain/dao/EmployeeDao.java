@@ -12,7 +12,7 @@ import org.apache.ibatis.mapping.FetchType;
 
 public interface EmployeeDao {
 
-	@Select("select * from "+EMPLOYEETABLE+" ")
+	@Select("select * from "+EMPLOYEETABLE+" where status = 1")
 	@Results({
 			@Result(id=true, column="id", property="id"),
 			@Result(column="dept_id", property="dept",
@@ -27,7 +27,7 @@ public interface EmployeeDao {
 	})
 	List<Employee> get_List();
 
-	@Select("select * from "+EMPLOYEETABLE+"  where name like CONCAT('%',#{content},'%')")
+	@Select("select * from "+EMPLOYEETABLE+"  where name like CONCAT('%',#{content},'%') and status=1")
 	@Results({
 			@Result(id=true, column="id", property="id"),
 			@Result(column="dept_id", property="dept",
@@ -81,4 +81,7 @@ public interface EmployeeDao {
 							fetchType=FetchType.EAGER))
 	})
 	List<Employee> findEmployeeByDeptId(Integer id);
+
+	@Update("update "+EMPLOYEETABLE+" set status = 0 where id = #{id}")
+	void resign(Integer id);
 }

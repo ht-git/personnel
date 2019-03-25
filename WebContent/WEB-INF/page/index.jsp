@@ -23,21 +23,16 @@
 <body>
     <!-- 顶部开始 -->
     <div class="container">
-        <div class="logo"><a href="./index.html">人事管理系统</a></div>
+        <div class="logo"><a href="/">人事管理系统</a></div>
         <div class="left_open">
             <i title="展开左侧栏" class="iconfont">&#xe699;</i>
         </div>
         
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">
-            <a href="javascript:;">admin</a>
-            <dl class="layui-nav-child"> <!-- 二级菜单 -->
-              <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
-              <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
-              <dd><a href="./login.html">退出</a></dd>
-            </dl>
+            ${sessionScope.user_session.username}
           </li>
-          <li class="layui-nav-item to-index"><a>欢迎登录</a></li>
+          <li class="layui-nav-item to-index"><a href="logout">退出</a></li>
         </ul>
         
     </div>
@@ -202,7 +197,7 @@
     <!-- 中部结束 -->
     <!-- 底部开始 -->
     <div class="footer">
-        <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved</div>  
+        <div class="copyright">开发者：cqupt软件学院2015级毕业实习第一组</div>
     </div>
     <!-- 底部结束 -->
  

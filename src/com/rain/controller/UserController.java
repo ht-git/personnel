@@ -39,12 +39,10 @@ public class UserController {
 				 ModelAndView mv){
 			// 调用业务逻辑组件判断用户是否可以登录
 			
-			
 			User user = rainservice.login(loginname, password);
 //			System.out.println(user.getLoginname());
 			if(user != null){
 				// 将用户保存到HttpSession当中
-				System.out.println("HttpSession");
 				session.setAttribute(Constants.USER_SESSION, user);
 				// 客户端跳转到main页面
 				mv.setViewName("redirect:/index");

@@ -67,6 +67,7 @@ public class EmployeeDynaSqlProvider {
 						if(employee.getSalary()!=null){						//添加salary字段
 							VALUES("salary","#{salary}");
 						}
+						VALUES("status", "1");
 					}
 				}.toString();
 			}	
